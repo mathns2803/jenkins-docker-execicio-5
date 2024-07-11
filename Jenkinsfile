@@ -14,8 +14,8 @@ pipeline {
                 }
             }
         }
-        stage('Run Docker Container') {
-            steps {
+    stage('Run Docker Container') {
+			steps {
                 script {
                     // Execute o contêiner Docker
                     docker.image('ola-unicamp:latest').inside {
@@ -24,5 +24,4 @@ pipeline {
                 }
             }
         }
-	}
 }
