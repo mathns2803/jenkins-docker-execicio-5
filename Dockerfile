@@ -6,4 +6,4 @@ COPY src/br/unicamp/OlaUnicamp.java .
 
 RUN javac OlaUnicamp.java
 
-CMD ["java", "olaunicamp"]
+CMD ["java", "OlaUnicamp"]
