@@ -7,7 +7,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('ola-unicamp:latest')
+                    sh """
+						docker build -t OlaUnicamp .
+						"""
                 }
             }
         }
@@ -15,9 +17,9 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image('ola-unicamp:latest').inside {
-                        sh 'java -cp . OlaUnicamp'
-                    }
+                    sh """
+						java OlaUnicamp
+					"""
                 }
             }
         }
