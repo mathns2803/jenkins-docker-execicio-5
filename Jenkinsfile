@@ -1,25 +1,20 @@
 pipeline {
     agent {
-        docker {
-            image 'openjdk:11'
-            label 'docker'
-        }
+        label 'docker'
     }
 
     stages {
         stage('Build') {
             steps {
                 script {
-                    docker.build('ola-unicamp')
+                    sh 'docker build -t ola-unicamp .'
                 }
             }
         }
         stage('Run') {
             steps {
                 script {
-                    docker.image('ola-unicamp').inside {
-                        sh 'java OlaUnicamp'
-                    }
+                    sh 'docker run --rm ola-unicamp'
                 }
             }
         }
