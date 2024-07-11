@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY src/br/unicamp/OlaUnicamp.java .
 
-RUN javac br/unicamp/OlaUnicamp.java
+RUN javac OlaUnicamp.java
 
-CMD ["java", "br.unicamp.OlaUnicamp"]
+CMD ["java", "OlaUnicamp"]
