@@ -2,7 +2,7 @@ FROM openjdk:11
 
 WORKDIR /app
 
-COPY OlaUnicamp.java .
+COPY src/br/unicamp/OlaUnicamp.java .
 
 RUN javac OlaUnicamp.java
 
