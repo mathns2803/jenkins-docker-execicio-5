@@ -13,7 +13,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh 'docker run olaunicamp'
+                    sh 'docker run --rm olaunicamp'
                 }
             }
         }

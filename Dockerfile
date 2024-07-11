@@ -2,8 +2,10 @@ FROM openjdk:11
 
 WORKDIR /app
 
-COPY src/br/unicamp/OlaUnicamp.java /app
+RUN mkdir -p src/br/unicamp
 
-RUN javac OlaUnicamp.java
+COPY src/br/unicamp/OlaUnicamp.java src/br/unicamp/
 
-CMD ["java", "OlaUnicamp"]
+RUN javac src/br/unicamp/OlaUnicamp.java
+
+CMD ["java", "-cp", "src", "br.unicamp.OlaUnicamp"]
