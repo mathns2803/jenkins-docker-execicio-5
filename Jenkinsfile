@@ -8,8 +8,6 @@ pipeline {
 
                     sh 'java -version'
                     sh 'javac -version'
-
-                    sh 'java OlaUnicamp'
                 }
             }
         }
